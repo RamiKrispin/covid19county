@@ -122,10 +122,9 @@ df_us_death2 <- df_us_death1 %>%
 head(df_us_death2)
 tail(df_us_death2)
 
-covid_us_county <- dplyr::bind_rows(df_us_death2, df_us_conf2)
-if(save){
-usethis::use_data(covid_us_county, overwrite = TRUE)
-}
+covid19county <- dplyr::bind_rows(df_us_death2, df_us_conf2)
+write.csv(covid19county, "csv/covid19county.csv", row.names = FALSE)
 
-return(covid_us_county)
+system(command = "git add *; git commit -m 'data refresh'; git push origin master")
+
 }
