@@ -1,0 +1,6 @@
+
+Rscript --no-save --no-restore ~/R/packages/covid19county/data_raw/data\ refresh.R
+
+
+
+
